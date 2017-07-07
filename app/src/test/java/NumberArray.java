@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Created by michaeliverson on 7/7/17.
@@ -37,6 +36,20 @@ public class NumberArray {
 
     public void sort()
     {
-        Collections.sort(this.listOfInts);
+
+       // just joking Collections.sort(this.listOfInts);  //
+
+        for (int i = 0; i <= this.listOfInts.size() - 1; i++)
+        {
+
+            for (int j = this.listOfInts.size() - 1; j > i ; j--)
+            {
+                if (this.listOfInts.get(j) < this.listOfInts.get(j - 1)) {
+                    Integer swap = this.listOfInts.get(j - 1);
+                    this.listOfInts.set(j - 1, this.listOfInts.get(j));
+                    this.listOfInts.set(j, swap);
+                }
+            }
+        }
     }
 }
